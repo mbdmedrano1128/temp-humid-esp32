@@ -32,7 +32,7 @@ This project is a simple demonstration of how to acquire temperature and humidit
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/mbdmedrano1128/temp-humid-esp32.git
 cd temp-humid-sensor
 ```
 
