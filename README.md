@@ -68,7 +68,6 @@ idf.py -p /dev/ttyUSB0 monitor
 
 Once running, the ESP32 will read from the sensor every few seconds and output logs similar to:
 
-```
 [DHT] Temperature: 26.4 °C
 [DHT] Humidity: 55.2 %
 
