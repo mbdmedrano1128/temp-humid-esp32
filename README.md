@@ -1,6 +1,6 @@
 # 🌡️ Temp and Humid Sensor Using ESP32
 
-This project is a simple demonstration of how to acquire temperature and humidity sensor readings using the ESP-IDF framework and display the data through serial logs. It's great for beginners learning embedded development with the ESP32 and environmental sensors.
+This project is a simple demonstration of how to acquire temperature and humidity sensor readings using the ESP-IDF framework and display the data through serial logs.
 
 ---
 
@@ -9,7 +9,7 @@ This project is a simple demonstration of how to acquire temperature and humidit
 - ESP32 Development Board  
 - DHT11 or DHT22 Temperature & Humidity Sensor  
 - Jumper wires  
-- ESP-IDF (v4.x or later) installed and configured  
+- ESP-IDF installed and configured  
 - USB cable for flashing  
 - Serial terminal (e.g., `idf.py monitor`, PuTTY, or minicom)  
 
@@ -21,7 +21,7 @@ This project is a simple demonstration of how to acquire temperature and humidit
 |------------|-----------|
 | VCC        | 3.3V      |
 | GND        | GND       |
-| DATA       | GPIO4     |
+| DATA       | GPIO23     |
 
 > 💡 *Note: Use a 10kΩ pull-up resistor between DATA and VCC if your sensor requires it.*
 
@@ -71,14 +71,6 @@ Once running, the ESP32 will read from the sensor every few seconds and output l
 ```
 [DHT] Temperature: 26.4 °C
 [DHT] Humidity: 55.2 %
-```
-
----
-
-## ⚙️ Configuration
-
-- Sensor GPIO pin can be configured in `main/dht_sensor.c` or via Kconfig if implemented.
-- Measurement interval can also be modified in the code (typically via `vTaskDelay`).
 
 ---
 
@@ -92,10 +84,9 @@ Once running, the ESP32 will read from the sensor every few seconds and output l
 
 ## 📌 Future Improvements
 
-- Add MQTT or HTTP integration to push data to the cloud  
-- Display sensor readings on an OLED screen  
-- Use NVS (non-volatile storage) to store historical data  
-- Add a web server interface for live monitoring  
+- Add MQTT or HTTP integration to push data to the cloud   
+- Add a web server interface for live monitoring
+- Broadcast data via BLE (e.g. beacon, connectable)
 
 ---
 
@@ -104,9 +95,3 @@ Once running, the ESP32 will read from the sensor every few seconds and output l
 - **No output in monitor?** Make sure the right COM port is selected and the board is powered.
 - **Sensor errors or NaN readings?** Check wiring, sensor voltage, and whether a pull-up resistor is needed.
 - **Build errors?** Ensure ESP-IDF is properly installed and `IDF_PATH` is set.
-
----
-
-## 📜 License
-
-This project is open-source and available under the MIT License.
